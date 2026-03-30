@@ -24,7 +24,7 @@ This project demonstrates real-time database interaction using SQL and Java.
 - JDBC  
 - MySQL  
 - Maven  
-- OOP Concepts  
+- Object-Oriented Programming (OOP)  
 
 ---
 
@@ -39,7 +39,32 @@ This project demonstrates real-time database interaction using SQL and Java.
 
 ---
 
+## 📁 Project Structure
+
+EmployeePayrollManagementSystem
+│
+├── src/main/java
+│ ├── com.mysql.app
+│ ├── com.mysql.dao
+│ ├── com.mysql.entity
+│ └── com.mysql.service
+│
+├── pom.xml
+└── README.md
+---
+
 ## ⚙️ Database Setup
+
+```sql
+CREATE DATABASE payroll_db;
+
+Update DB connection in:
+
+DBConnection.java
+
+Example:
+
+jdbc:mysql://localhost:3306/payroll_db
 
 ▶️ How to Run
 Clone the repository
@@ -57,5 +82,6 @@ Run PayrollApp.java
 
 Vijay
 
-```sql
-CREATE DATABASE payroll_db;
+
+
+---
