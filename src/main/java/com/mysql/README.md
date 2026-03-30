@@ -1,12 +1,28 @@
 
 ---
 
+```markdown
+# 📦 Code Structure – Employee Payroll System
+
+This document explains the internal code structure and flow of the project.
+
+---
+
+## 📁 Package Structure
+
+- com.mysql.app  
+- com.mysql.dao  
+- com.mysql.entity  
+- com.mysql.service  
+
+---
+
 ## 📌 Package Details
 
 ### 🔹 com.mysql.app
 - Contains main class: `PayrollApp.java`
 - Handles user input (menu-driven program)
-- Calls DAO and Service methods
+- Controls application flow
 
 ---
 
@@ -15,9 +31,9 @@
 - Uses JDBC (Connection, PreparedStatement, ResultSet)
 
 #### Classes:
-- `DBConnection.java` → Database connection setup  
-- `EmployeeDAO.java` → Employee operations  
-- `DepartmentDAO.java` → Department operations  
+- DBConnection.java → Database connection  
+- EmployeeDAO.java → Employee operations  
+- DepartmentDAO.java → Department operations  
 
 ---
 
@@ -25,10 +41,10 @@
 - Represents database tables as Java classes (POJO)
 
 #### Classes:
-- `Employee.java` → Employee table  
-- `Department.java` → Department table  
-- `EmployeeDept.java` → JOIN result mapping  
-- `DepartmentSalary.java` → GROUP BY result  
+- Employee.java  
+- Department.java  
+- EmployeeDept.java  
+- DepartmentSalary.java  
 
 ---
 
@@ -36,24 +52,30 @@
 - Contains business logic
 
 #### Classes:
-- `PayrollService.java`
-  - Calculates:
-    - Tax
-    - PF
-    - Net Salary  
+- PayrollService.java  
+  - Calculates salary details  
+  - Tax  
+  - PF  
+  - Net Salary  
 
 ---
 
 ## 🔄 Application Flow
 
-1. User selects option from menu  
-2. `PayrollApp` receives input  
+1. User selects option  
+2. PayrollApp receives input  
 3. Calls DAO layer  
 4. DAO executes SQL query  
-5. Result returned as objects  
-6. Data printed in formatted table  
+5. Result mapped to objects  
+6. Output displayed using formatted table  
 
 ---
+
+## 📊 Example Flow
+
+Add Employee:
+
+User → PayrollApp → EmployeeDAO → Database → Success Message
 
 ---
 
@@ -68,17 +90,15 @@
 
 ## 🧠 Important Notes
 
-- All DB operations use PreparedStatement  
-- Used Try-with-resources for resource management  
-- Data formatted using `printf()`  
+- Uses PreparedStatement for SQL queries  
+- Uses try-with-resources for resource handling  
+- Uses printf() for formatted output  
 
 ---
 
-## 🚀 Developer Tip
+## 🚀 Developer Insight
 
-This structure makes the project:
-✔ Easy to maintain  
-✔ Easy to extend  
-✔ Suitable for real-world applications  
-
-## 📊 Example Flow (Add Employee)
+This structure improves:
+✔ Code readability  
+✔ Maintainability  
+✔ Scalability  
